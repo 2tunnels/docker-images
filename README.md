@@ -1,5 +1,7 @@
 # docker-images
 
+[![CI](https://github.com/2tunnels/docker-images/actions/workflows/ci.yml/badge.svg)](https://github.com/2tunnels/docker-images/actions/workflows/ci.yml)
+
 Personal Docker images I use as base images, CI images, and so on.
 
 ## Images
@@ -16,3 +18,7 @@ Based on [astral-sh/uv](https://github.com/astral-sh/uv/pkgs/container/uv) offic
 | `ghcr.io/2tunnels/python:3.13-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
 
 All images are built for `linux/amd64` and `linux/arm64`.
+
+## Security
+
+Images are scanned on every CI run using [Trivy](https://github.com/aquasecurity/trivy). The scanner checks for `CRITICAL` and `HIGH` severity vulnerabilities and fails the build if any unfixed vulnerabilities are found. Images are also rebuilt daily via a scheduled workflow to pick up upstream security fixes.
