@@ -17,9 +17,15 @@ jobs:
           - file: images/python-3.14-trixie-slim.dockerfile
             name: python
             tag: 3.14-trixie-slim
+          - file: images/python-3.14-trixie-slim-gdal.dockerfile
+            name: python
+            tag: 3.14-trixie-slim-gdal
           - file: images/python-3.13-trixie-slim.dockerfile
             name: python
             tag: 3.13-trixie-slim
+          - file: images/python-3.13-trixie-slim-gdal.dockerfile
+            name: python
+            tag: 3.13-trixie-slim-gdal
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
