@@ -18,6 +18,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         image:
           - file: images/python-3.14-trixie-slim.dockerfile
