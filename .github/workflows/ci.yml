@@ -21,30 +21,45 @@ jobs:
     strategy:
       matrix:
         image:
+          - file: images/python-3.14-alpine.dockerfile
+            name: python
+            tag: 3.14-alpine
           - file: images/python-3.14-trixie-slim.dockerfile
             name: python
             tag: 3.14-trixie-slim
           - file: images/python-3.14-trixie-slim-gdal.dockerfile
             name: python
             tag: 3.14-trixie-slim-gdal
+          - file: images/python-3.13-alpine.dockerfile
+            name: python
+            tag: 3.13-alpine
           - file: images/python-3.13-trixie-slim.dockerfile
             name: python
             tag: 3.13-trixie-slim
           - file: images/python-3.13-trixie-slim-gdal.dockerfile
             name: python
             tag: 3.13-trixie-slim-gdal
+          - file: images/python-3.12-alpine.dockerfile
+            name: python
+            tag: 3.12-alpine
           - file: images/python-3.12-trixie-slim.dockerfile
             name: python
             tag: 3.12-trixie-slim
           - file: images/python-3.12-trixie-slim-gdal.dockerfile
             name: python
             tag: 3.12-trixie-slim-gdal
+          - file: images/python-3.11-alpine.dockerfile
+            name: python
+            tag: 3.11-alpine
           - file: images/python-3.11-trixie-slim.dockerfile
             name: python
             tag: 3.11-trixie-slim
           - file: images/python-3.11-trixie-slim-gdal.dockerfile
             name: python
             tag: 3.11-trixie-slim-gdal
+          - file: images/python-3.10-alpine.dockerfile
+            name: python
+            tag: 3.10-alpine
           - file: images/python-3.10-trixie-slim.dockerfile
             name: python
             tag: 3.10-trixie-slim

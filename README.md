@@ -12,14 +12,19 @@ Based on [astral-sh/uv](https://github.com/astral-sh/uv/pkgs/container/uv) offic
 
 | Image                                           | Description                           |
 |-------------------------------------------------|---------------------------------------|
+| `ghcr.io/2tunnels/python:3.14-alpine`           | Python 3.14 on alpine                 |
 | `ghcr.io/2tunnels/python:3.14-trixie-slim`      | Python 3.14 on Debian trixie slim     |
 | `ghcr.io/2tunnels/python:3.14-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
+| `ghcr.io/2tunnels/python:3.13-alpine`           | Python 3.13 on alpine                 |
 | `ghcr.io/2tunnels/python:3.13-trixie-slim`      | Python 3.13 on Debian trixie slim     |
 | `ghcr.io/2tunnels/python:3.13-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
+| `ghcr.io/2tunnels/python:3.12-alpine`           | Python 3.12 on alpine                 |
 | `ghcr.io/2tunnels/python:3.12-trixie-slim`      | Python 3.12 on Debian trixie slim     |
 | `ghcr.io/2tunnels/python:3.12-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
+| `ghcr.io/2tunnels/python:3.11-alpine`           | Python 3.11 on alpine                 |
 | `ghcr.io/2tunnels/python:3.11-trixie-slim`      | Python 3.11 on Debian trixie slim     |
 | `ghcr.io/2tunnels/python:3.11-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
+| `ghcr.io/2tunnels/python:3.10-alpine`           | Python 3.10 on alpine                 |
 | `ghcr.io/2tunnels/python:3.10-trixie-slim`      | Python 3.10 on Debian trixie slim     |
 | `ghcr.io/2tunnels/python:3.10-trixie-slim-gdal` | Same + GDAL (for PostGIS / GeoDjango) |
 
