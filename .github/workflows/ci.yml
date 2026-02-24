@@ -17,7 +17,6 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
@@ -69,6 +68,8 @@ jobs:
           tags: ${{ matrix.image.name }}:${{ matrix.image.tag }}
 
       - name: Run Trivy vulnerability scanner
+        id: trivy
+        continue-on-error: true
         uses: aquasecurity/trivy-action@e368e328979b113139d6f9068e03accaed98a518 # 0.34.1
         with:
           image-ref: ${{ matrix.image.name }}:${{ matrix.image.tag }}
@@ -78,7 +79,7 @@ jobs:
           severity: CRITICAL,HIGH
 
       - name: Log in to GitHub Container Registry
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+        if: ${{ steps.trivy.outcome == 'success' && (github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) }}
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
         with:
           registry: ghcr.io
@@ -86,7 +87,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main') }}
+        if: ${{ steps.trivy.outcome == 'success' && (github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')) }}
         uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
         with:
           file: ${{ matrix.image.file }}
